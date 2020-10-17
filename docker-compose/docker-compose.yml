@@ -1,0 +1,8 @@
+version: '2'
+services:
+  eureka:
+    image: zhou/eureka-server
+    network_mode: "host"  #主机与容器网络共享，集群环境下实现跨机房注册
+  client:
+    image: zhou/eureka-client
+    network_mode: "host"

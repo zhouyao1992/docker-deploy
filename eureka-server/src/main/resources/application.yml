@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 8081
+
+# 注册中心配置
+eureka:
+  server:
+    enable-self-preservation: false       # 关闭自我保护模式（缺省为打开）
+    eviction-interval-timer-in-ms: 30000   # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+  instance:
+    hostname: 192.168.177.130
+    prefer-ip-address: true   #通过ip地址注册
+  client:
+    register-with-eureka: false   # 代表不向注册中心注册自己
+    fetch-registry: false   # 注册中心的职责就是维护服务实例，并不需要检索服务
+    serviceUrl:
+      defaultZone: http://192.168.177.130:8081/eureka/ #注册中心集群配置
