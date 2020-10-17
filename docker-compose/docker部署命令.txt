@@ -1,0 +1,5 @@
+-----先build镜像
+docker build -t zhou/eureka-server .
+docker build -t zhou/eureka-client .
+-----再执行
+docker-compose up -d
