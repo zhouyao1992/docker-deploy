@@ -72,7 +72,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <!-- 设置镜像名称-->
                     <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+                    <!-- 指定Dockerfile所在的路径 -->
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
@@ -81,6 +83,12 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+
+                    <!--推送阿里云私有镜像仓库-->
+                    <serverId>docker-aliyun</serverId>
+                    <registryUrl>${docker.repostory}</registryUrl>
+                    <pushImage>true</pushImage>
+
                 </configuration>
             </plugin>
 

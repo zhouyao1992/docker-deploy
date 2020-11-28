@@ -17,7 +17,11 @@
         <java.version>1.8</java.version>
         <spring.cloud.version>Finchley.SR2</spring.cloud.version>
         <docker.plugin.version>0.4.13</docker.plugin.version>
-        <docker.image.prefix>zhou</docker.image.prefix>
+        <docker.image.prefix>${docker.repostory}/${docker.registry.name}</docker.image.prefix>
+
+        <!--docker私有仓库地址-->
+        <docker.repostory>registry.cn-hangzhou.aliyuncs.com</docker.repostory>
+        <docker.registry.name>zhouyao1992</docker.registry.name>
     </properties>
 
     <!-- Spring Boot 启动父依赖 -->
