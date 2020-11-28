@@ -4,7 +4,7 @@ docker build -t zhou/eureka-client:1.0 .
 -----再执行启动服务
 docker-compose up -d
 
------推送镜像到阿里云私有仓库----
+-----推送镜像到阿里云私有仓库(需要在阿里云容器镜像服务设置用户访问凭证)----
 mvn clean package docker:build  -DpushImage
 ----从阿里云下载镜像到本地----
 docker pull registry.cn-hangzhou.aliyuncs.com/zhouyao1992/eureka-server:1.0-SNAPSHOT
